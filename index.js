@@ -57,6 +57,19 @@ const counterReducer = (state = initialCounterState, action) => {
     }
 }
 
+// create store
+const store = createStore(counterReducer);
+
+store.subscribe(() => {
+    console.log(store.getState());
+})
+
+// dispatch action
+store.dispatch(incrementCounterAction())
+store.dispatch(incrementCounterAction())
+store.dispatch(incrementCounterAction())
+store.dispatch(decrementCounterAction())
+
 /*
 1. state
 2. dispatch action
