@@ -1,6 +1,7 @@
 // defining constants
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
+const ADD_USER = 'ADD_USER';
 
 // state
 const initialCounterState = {
@@ -20,10 +21,27 @@ const incrementCounterAction = () => {
 
     }
 };
+
 const decrementCounterAction = () => {
     return {
         type: DECREMENT,
 
     }
 };
+
+const addUser = () => {
+    return {
+        type: ADD_USER,
+        payload: { name: 'shimul' }
+
+    }
+};
 // DECREMENT COUNTER
+
+
+/*
+1. state
+2. dispatch action
+3. reducer
+4. store
+*/
