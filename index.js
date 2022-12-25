@@ -4,11 +4,13 @@ const { createStore } = require("redux");
 const GET_PRODUCTS = "GET_PRODUCTS";
 const ADD_PRODUCT = "ADD_PRODUCT";
 
+// product states
 const initialProductState = {
     products: ["sugar", "salt"],
     numOfProducts: 2
 };
 
+// product actions
 const getProducts = () => {
     return {
         type: GET_PRODUCTS
