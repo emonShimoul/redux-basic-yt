@@ -50,7 +50,7 @@ const todosReducer = (state = initialTodosState, action) => {
         case GET_TODOS_SUCCESS:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: false,
                 todos: action.payload
             }
         case GET_TODOS_FAILURE:
@@ -74,10 +74,11 @@ const fetchData = () => {
             .then((res) => {
                 const todos = res.data;
                 const titles = todos.map(todo => todo.title);
-                console.log(titles);
+                dispatch(getTodosSuccess(titles));
             })
             .catch(error => {
-                console.log(error.message);
+                const errorMessage = (error.message);
+                dispatch(getTodosFailure(errorMessage));
             })
     }
 }
