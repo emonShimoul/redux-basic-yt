@@ -18,7 +18,7 @@ const initialTodoStates = {
     todos: [],
     isLoading: false,
     error: null,
-}
+};
 
 // actions
 const getTodosRequest = () => {
@@ -63,8 +63,8 @@ const todosReducer = (state = initialTodoStates, action) => {
             }
         default:
             break;
-    }
-}
+    };
+};
 
 // async action creator
 const fetchData = () => {
