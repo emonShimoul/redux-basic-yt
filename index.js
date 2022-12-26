@@ -70,7 +70,9 @@ const todosReducer = (state = initialTodoStates, action) => {
 const fetchData = () => {
     return (dispatch) => {
         dispatch(getTodosRequest());
-        axios.get(API_URL)
+        axios.get(API_URL, {
+            headers: { "Accept-Encoding": "gzip,deflate,compress" }
+        })
             .then(res => {
                 const todos = res.data;
                 const titles = todos.map(todo => todo.title);
